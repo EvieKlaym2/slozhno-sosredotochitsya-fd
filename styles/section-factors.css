@@ -3,7 +3,9 @@
 }
 
 .factors__list {
+  display: grid;
   grid-template-rows: repeat(auto-fill, 1fr);
+  gap: 20px;
 }
 
 @media (width >= 768px) {
