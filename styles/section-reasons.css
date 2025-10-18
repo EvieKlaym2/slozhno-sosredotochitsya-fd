@@ -1,0 +1,9 @@
+.section-reasons {
+  padding: 40px 10px 50px 10px;
+}
+
+@media (width >= 768px) {
+  .section-reasons {
+    padding: 60px 20px 80px 20px;
+  }
+}

@@ -1,5 +1,170 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+@import url(./header.css);
+@import url(./section-reasons.css);
+@import url(./section-factors.css);
+@import url(./section-advices.css);
+@import url(./section-images.css);
+@import url(./footer.css);
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  min-width: 375px;
+  background-color: var(--bg-color);
+}
+
+.decorative-elements-group {
+  position: absolute;
+  top: 13px;
+  right: 38px;
+  font-family: var(--main-font, monospace);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--accent-color, rgba(255, 0, 112, 1));
+}
+
+.decorative-elements-group::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: -19px;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+.decorated-zone {
+  position: relative;
+}
+.decorated-zone::before {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: 10px;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--link-color);
+  border-right: 1px solid var(--link-color);
+}
+
+.decorated-zone::after {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 10px;
+  bottom: 10px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--link-color);
+  border-left: 1px solid var(--link-color);
+}
+
+.text-color {
+  font-family: var(--main-font, monospace);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--title-text-color);
+  line-height: 23.4px;
+}
+.accent-bg {
+  display: inline-block;
+  font-weight: 700;
+  font-family: var(--main-font, monospace);
+  font-size: 18px;
+  color: var(--header-text-color, rgba(0, 0, 40, 1));
+  line-height: 23.4px;
+  background-color: var(--accent-color, rgba(255, 0, 112, 1));
+}
+
+.accent-bg-regular {
+  display: inline-block;
+  font-weight: 400;
+  font-family: var(--main-font, monospace);
+  font-size: 18px;
+  color: var(--header-text-color, rgba(0, 0, 40, 1));
+  line-height: 23.4px;
+  background-color: var(--accent-color, rgba(255, 0, 112, 1));
+}
+
+.accent-text {
+  font-family: var(--main-font, monospace);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  color: var(--main-text-color, rgba(241, 178, 206, 1));
+}
+
+.list-item {
+  display: block;
+  margin-block-end: 10px;
+}
+
+.list-item:last-child {
+  margin-block-end: 0;
+}
+
+.accent-link {
+  cursor: pointer;
+  text-decoration: none;
+  text-shadow: 2px 2px var(--accent-color);
+}
+
+.accent-link:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.accent-link:focus {
+  outline: none;
+  border: 1px solid currentColor;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
+}
+
+.section__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fill, 1fr);
+  gap: 20px;
+}
+
+@media (width >= 768px) {
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .decorative-elements-group {
+    top: 20px;
+    right: 48px;
+  }
+
+  .decorative-elements-group::after {
+    top: 8px;
+  }
+
+  .decorative-text {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .section {
+    grid-template-columns: 1fr 2fr;
+  }
 }

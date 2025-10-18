@@ -1,0 +1,122 @@
+.header {
+  display: grid;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-width: 375px;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  min-block-size: 668px;
+  padding: 0 10px;
+}
+
+.header__theme-menu {
+  margin-top: 75px;
+  justify-self: right;
+  align-self: start;
+}
+
+.header-dec-text {
+  justify-self: start;
+  font-family: var(--main-font, monospace);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  color: var(--dec-color, rgba(219, 0, 255, 1));
+  text-shadow: 4px 4px 0 var(--accent-color, rgba(255, 0, 112, 1));
+  line-height: 83%;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  list-style: none;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 11px;
+}
+
+.header__theme-menu-button {
+  text-transform: lowercase;
+  font-weight: 400;
+  inline-size: 70px;
+  block-size: 26px;
+  text-align: center;
+  font-size: 18px;
+  font-family: var(--main-font, monospace);
+  color: var(--link-color);
+  line-height: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:focus {
+  border-bottom: 1px solid currentColor;
+  outline: none;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--btn-color-hover);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--link-color);
+  pointer-events: none;
+}
+
+.header__title {
+  justify-self: left;
+  align-self: center;
+  inline-size: 100%;
+  margin-top: 21px;
+  margin-bottom: 20px;
+}
+
+.header__subtitle {
+  justify-self: right;
+  align-self: end;
+  inline-size: 355px;
+  margin-bottom: 66px;
+}
+
+@media (width >= 768px) {
+  .header {
+    padding: 0 20px 0 20px;
+  }
+
+  .header__subtitle {
+    inline-size: 364px;
+    margin-bottom: 183px;
+  }
+
+  .header__title {
+    margin-top: 20px;
+    margin-left: -20px;
+  }
+  .header__theme-menu {
+    margin-top: 192px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header-dec-text {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-top: 20px;
+  }
+
+  .header__title {
+    margin-top: 20px;
+  }
+  .header__subtitle {
+    inline-size: 491px;
+  }
+
+  .header__theme-menu-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
+}

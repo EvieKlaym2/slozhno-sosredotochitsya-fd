@@ -1,0 +1,30 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 100%;
+  block-size: 100vh;
+  min-block-size: 668px;
+}
+
+.footer__header {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.footer-decorative-text {
+  justify-self: start;
+  font-family: var(--main-font, monospace);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  color: var(--dec-color, rgba(219, 0, 255, 1));
+  text-shadow: 2px 2px 0 var(--accent-color, rgba(255, 0, 112, 1));
+  line-height: 83%;
+}
+
+@media (width >= 768px) {
+  .footer-decorative-text {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
